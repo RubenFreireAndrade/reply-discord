@@ -1,6 +1,12 @@
 import discord
+import os
 from enum import Enum
 from user import User
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv("DISCORD_TOKEN")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))  # replace with the channel where bot should post
 
 class UserId(Enum):
     VOVA = 188122408085880832
@@ -25,9 +31,6 @@ users = [
         "Greetings friend. You have been invited to watch film!"
     ),    
 ]
-
-TOKEN = "MTQwODE2ODQxNzE4OTU2NDQ2Nw.GfBFzr.n-q9Hygi2CI7u_Mpc1YZwO2jXqtZwIFlTYWgJ8"
-CHANNEL_ID = 406394804990115862  # replace with the channel where bot should post
 
 intents = discord.Intents.default()
 intents.message_content = True
