@@ -2,9 +2,22 @@ import discord
 import os
 import datetime
 import json
+import threading
 
 from user import User
+from flask import Flask
 from dotenv import load_dotenv
+
+# --- Flask "keep-alive" server for Render ---
+app = Flask("")
+
+@app.route("/")
+def home():
+    return "Bot is alive!"
+
+def run_web_server():
+    app.run(host="0.0.0.0", port=10000)
+# --------------------------------------------
 
 # Load environment variables
 load_dotenv()
@@ -92,7 +105,8 @@ async def on_ready():
     if not main_message:
         movie_night_time = get_next_movie_night()
         invite_message = (
-            f"🎥 You have been invited to {channel.guild.get_role(ROLE_ID).mention}!\n\n"
+            # f"🎥 You have been invited to {channel.guild.get_role(ROLE_ID).mention}!\n\n"
+            f"🎥 You have been invited to movies!\n\n"
             f"📅 When: **{movie_night_time}**\n"
             f"🎬 Film: {IMDB_LINK}\n\n"
             f"React to this message with ✋ if interested."
@@ -140,5 +154,9 @@ async def on_reaction_add(reaction, user):
             save_last_message_data(reaction.message.id, list(sent_dms))
     except discord.Forbidden:
         print(f"❌ Could not DM {user} (they may have DMs turned off).")
+
+    if __name__ == "__main__":
+        # Start tiny web server for Render
+        threading.Thread(target=run_web_server).start()
 
 client.run(TOKEN)
