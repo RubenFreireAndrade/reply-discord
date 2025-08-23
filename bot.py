@@ -15,7 +15,8 @@ JELLYFIN_LINK = os.getenv("JELLYFIN_LINK")
 ROLE_ID = int(os.getenv("ROLE_ID"))
 
 # Ask for IMDb link at startup
-IMDB_LINK = input("🎬 Enter the IMDb link for the film: ")
+# IMDB_LINK = input("🎬 Enter the IMDb link for the film: ")
+IMDB_LINK = os.getenv("IMDB_LINK")
 
 # File to store the last message and sent DMs
 MESSAGE_FILE = "last_movie_message.json"
