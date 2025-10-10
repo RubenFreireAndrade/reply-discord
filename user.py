@@ -9,7 +9,7 @@ class User:
             f"🎉 Hi {self.name},\n\n"
             f"You’re invited to movie night! 🍿\n\n"
             f"📥 Download Jellyfin app (Windows): {jellyfin_link}\n\n"
-            f"👉 Connect to Jellyfin: http://{server_ip}\n"
+            f"👉 Connect to Jellyfin: https://{server_ip}\n"
             f"👤 Username: {self.login_details['username']}\n"
             f"🔑 Password: {self.login_details['password']}\n\n"
             f"See you there!"

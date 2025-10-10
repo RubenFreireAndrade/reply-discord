@@ -57,6 +57,7 @@ users = [
     User(int(os.getenv("MATE")), "Mate", {"username": "Mate", "password": "Password!"}),
     User(int(os.getenv("FRANCIS")), "Francis", {"username": "Francis", "password": "Password!"}),
     User(int(os.getenv("DOM")), "Dom", {"username": "Dom", "password": "Password!"}),
+    User(int(os.getenv("AURIMAS")), "Aurimas", {"username": "Aurimas", "password": "Password!"}),
 ]
 
 user_lookup = {u.id: u for u in users}
@@ -92,8 +93,8 @@ async def on_ready():
     if not main_message:
         movie_night_time = get_next_movie_night()
         invite_message = (
-            f"🎥 You have been invited to movie night!\n\n"
-            # f"🎥 You have been invited to {channel.guild.get_role(ROLE_ID).mention}!\n\n"
+            # f"🎥 You have been invited to movie night!\n\n"
+            f"🎥 You have been invited to {channel.guild.get_role(ROLE_ID).mention}!\n\n"
             f"📅 When: **{movie_night_time}**\n"
             f"🎬 Film: {IMDB_LINK}\n\n"
             f"React to this message with ✋ if interested."
