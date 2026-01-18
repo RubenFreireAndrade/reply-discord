@@ -48,16 +48,16 @@ def get_next_movie_night():
 
 # Define your users
 users = [
-    User(int(os.getenv("VOVA")), "Vova", {"username": "Vova", "password": "Password!"}),
-    User(int(os.getenv("RUBEN")), "Ruben", {"username": "Rubs", "password": "Password!"}),
-    User(int(os.getenv("BASHIR")), "Bashir", {"username": "Bashir", "password": "Password!"}),
-    User(int(os.getenv("MOSES")), "Moses", {"username": "Moses", "password": "Password!"}),
-    User(int(os.getenv("MARCO")), "Marco", {"username": "Marco", "password": "Password!"}),
-    User(int(os.getenv("IVANKA")), "Ivanka", {"username": "Ivanka", "password": "Password!"}),
-    User(int(os.getenv("MATE")), "Mate", {"username": "Mate", "password": "Password!"}),
-    User(int(os.getenv("FRANCIS")), "Francis", {"username": "Francis", "password": "Password!"}),
-    User(int(os.getenv("DOM")), "Dom", {"username": "Dom", "password": "Password!"}),
-    User(int(os.getenv("AURIMAS")), "Aurimas", {"username": "Aurimas", "password": "Password!"}),
+    User(int(os.getenv("VOVA")), "Vova", {"username": "Vova", "password": "Password?"}),
+    User(int(os.getenv("RUBEN")), "Ruben", {"username": "Rubs", "password": "Password?"}),
+    User(int(os.getenv("BASHIR")), "Bashir", {"username": "Bashir", "password": "Password?"}),
+    User(int(os.getenv("MOSES")), "Moses", {"username": "Moses", "password": "Password?"}),
+    User(int(os.getenv("MARCO")), "Marco", {"username": "Marco", "password": "Password?"}),
+    User(int(os.getenv("IVANKA")), "Ivanka", {"username": "Ivanka", "password": "Password?"}),
+    User(int(os.getenv("MATE")), "Mate", {"username": "Mate", "password": "Password?"}),
+    User(int(os.getenv("FRANCIS")), "Francis", {"username": "Francis", "password": "Password?"}),
+    User(int(os.getenv("DOM")), "Dom", {"username": "Dom", "password": "Password?"}),
+    User(int(os.getenv("AURIMAS")), "Aurimas", {"username": "Aurimas", "password": "Password?"}),
 ]
 
 user_lookup = {u.id: u for u in users}
