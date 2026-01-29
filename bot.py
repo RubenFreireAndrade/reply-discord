@@ -13,6 +13,7 @@ CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 SERVER_IP = os.getenv("SERVER_IP")
 JELLYFIN_LINK = os.getenv("JELLYFIN_LINK")
 ROLE_ID = int(os.getenv("ROLE_ID"))
+DEFAULT_PASSWD = os.getenv("DEFAULT_PASSWD")
 
 # Ask for IMDb link at startup
 # IMDB_LINK = input("🎬 Enter the IMDb link for the film: ")
@@ -48,16 +49,16 @@ def get_next_movie_night():
 
 # Define your users
 users = [
-    User(int(os.getenv("VOVA")), "Vova", {"username": "Vova", "password": "Password?"}),
-    User(int(os.getenv("RUBEN")), "Ruben", {"username": "Rubs", "password": "Password?"}),
-    User(int(os.getenv("BASHIR")), "Bashir", {"username": "Bashir", "password": "Password?"}),
-    User(int(os.getenv("MOSES")), "Moses", {"username": "Moses", "password": "Password?"}),
-    User(int(os.getenv("MARCO")), "Marco", {"username": "Marco", "password": "Password?"}),
-    User(int(os.getenv("IVANKA")), "Ivanka", {"username": "Ivanka", "password": "Password?"}),
-    User(int(os.getenv("MATE")), "Mate", {"username": "Mate", "password": "Password?"}),
-    User(int(os.getenv("FRANCIS")), "Francis", {"username": "Francis", "password": "Password?"}),
-    User(int(os.getenv("DOM")), "Dom", {"username": "Dom", "password": "Password?"}),
-    User(int(os.getenv("AURIMAS")), "Aurimas", {"username": "Aurimas", "password": "Password?"}),
+    User(int(os.getenv("VOVA")), "Vova", {"username": "Vova", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("RUBEN")), "Rubs", {"username": "Rubs", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("BASHIR")), "Bashir", {"username": "Bashir", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("MOSES")), "Moses", {"username": "Moses", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("MARCO")), "Marco", {"username": "Marco", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("IVANKA")), "Ivanka", {"username": "Ivanka", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("MATE")), "Mate", {"username": "Mate", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("FRANCIS")), "Francis", {"username": "Francis", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("DOM")), "Dom", {"username": "Dom", "password": DEFAULT_PASSWD}),
+    User(int(os.getenv("AURIMAS")), "Aurimas", {"username": "Aurimas", "password": DEFAULT_PASSWD}),
 ]
 
 user_lookup = {u.id: u for u in users}
